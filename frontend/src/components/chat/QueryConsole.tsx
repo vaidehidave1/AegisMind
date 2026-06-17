@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Send, Mic, Paperclip, ShieldCheck } from 'lucide-react';
 import { useStore } from '../../store/useStore';
 import { API_BASE_URL } from '../../lib/api';

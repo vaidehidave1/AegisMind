@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useStore } from '../../store/useStore';
-import { Users, Activity, ShieldAlert, MessageSquare, ShieldCheck, RefreshCw } from 'lucide-react';
+import { Users, ShieldAlert, MessageSquare, ShieldCheck, RefreshCw } from 'lucide-react';
 import { API_BASE_URL } from '../../lib/api';
 
 interface UserActivity {

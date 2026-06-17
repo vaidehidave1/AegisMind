@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useStore } from '../../store/useStore';
 import { Settings as SettingsIcon, ShieldCheck, Key, RefreshCw, Trash2 } from 'lucide-react';
 import { API_BASE_URL } from '../../lib/api';
