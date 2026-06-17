@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-sentinel-black text-white font-sans antialiased overflow-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-sentinel-panel backdrop-blur-md border border-sentinel-border shadow-[0_0_15px_rgba(0,240,255,0.05)];
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+}
+
+/* Custom Scrollbar for sleek aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sentinel-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sentinel-graphite rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sentinel-cyan;
+}
