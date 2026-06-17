@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useStore } from '../../store/useStore';
 import { Users, Activity, ShieldAlert, MessageSquare, ShieldCheck, RefreshCw } from 'lucide-react';
+import { API_BASE_URL } from '../../lib/api';
 
 interface UserActivity {
   username: string;
@@ -37,7 +38,7 @@ export default function Admin() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:8000/api/admin/stats', {
+      const res = await fetch(`${API_BASE_URL}/api/admin/stats`, {
         headers: {
           'Authorization': `Bearer ${currentUser.token}`
         }

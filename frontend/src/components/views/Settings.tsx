@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useStore } from '../../store/useStore';
 import { Settings as SettingsIcon, ShieldCheck, Key, RefreshCw, Trash2 } from 'lucide-react';
+import { API_BASE_URL } from '../../lib/api';
 
 export default function Settings() {
   const { geminiApiKey, setGeminiApiKey, groqApiKey, setGroqApiKey, messages, currentUser, setCurrentUser } = useStore();
@@ -23,7 +24,7 @@ export default function Settings() {
     if (!currentUser) return;
     setProfileStatus('updating');
     try {
-      const res = await fetch('http://localhost:8000/api/auth/profile', {
+      const res = await fetch(`${API_BASE_URL}/api/auth/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

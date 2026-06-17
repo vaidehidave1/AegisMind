@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { API_BASE_URL } from '../lib/api';
 
 export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 export type IntentType = 'General Inquiry' | 'Technical Help' | 'Unsafe Request' | 'Prompt Injection';
@@ -97,7 +98,7 @@ export const useStore = create<AppState>((set, get) => ({
     const user = get().currentUser;
     if (!user) return;
     try {
-      const res = await fetch('http://localhost:8000/api/chat/history', {
+      const res = await fetch(`${API_BASE_URL}/api/chat/history`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }

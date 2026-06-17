@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Send, Mic, Paperclip, ShieldCheck } from 'lucide-react';
 import { useStore } from '../../store/useStore';
+import { API_BASE_URL } from '../../lib/api';
 
 export default function QueryConsole() {
   const [input, setInput] = useState('');
@@ -53,7 +54,7 @@ export default function QueryConsole() {
         headers['Authorization'] = `Bearer ${currentUser.token}`;
       }
 
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ message: userQuery, sessionId: 'default' })
